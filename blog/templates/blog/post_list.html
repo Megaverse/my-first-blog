@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Shuvam Shah's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Shuvam Shah's Blog</a></h1>
-        </div>
+<head>
+  <title>Shuvam Shah's blog</title>
+</head>
 
-        <div>
-            <p>published: 14/12/2015, 04:25 PM</p>
-            <h2><a href="">My first post</a></h2>
-            <p>What do you want to know about myself? I am not in the mob and not even that dead fish which goes with the flow. I am yet to know myself. I am Shuvam... Or say, I am just a common man, walking his way to become the original self.</p>
-        </div>
+<body>
+  <div class="">
+    <h1><a href="/">Shuvam Shah's Blog</a></h1>
+  </div>
 
-        <div>
-            <p>published: 14/12/2015, 04:26 PM</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Shape Science provides you relevant information and facts about Science & Technology. It helps you 'shape science' in your own way. In other words, it helps using science & technology in one's own way and get maximum benefit.</p>
-        </div>
-    </body>
+  {% for post in posts %}
+    <div class="">
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p><b>published:</b> {{ post.published_date }}</p>
+      <p>{{ post.text | linebreaks }}</p>
+    </div>
+  {% endfor %}
+
+</body>
 </html>
